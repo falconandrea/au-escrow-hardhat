@@ -1,31 +1,31 @@
-import { ethers } from 'ethers';
+import { ethers } from 'ethers'
 
-const provider = new ethers.providers.Web3Provider(ethereum);
+const provider = new ethers.providers.Web3Provider(ethereum)
 
-export default async function addContract(
+export default async function addContract (
   id,
   contract,
   arbiter,
   beneficiary,
   value
 ) {
-  const buttonId = `approve-${id}`;
+  const buttonId = `approve-${id}`
 
-  const container = document.getElementById('container');
-  container.innerHTML += createHTML(buttonId, arbiter, beneficiary, value);
+  const container = document.getElementById('container')
+  container.innerHTML += createHTML(buttonId, arbiter, beneficiary, value)
 
   contract.on('Approved', () => {
-    document.getElementById(buttonId).className = 'complete';
-    document.getElementById(buttonId).innerText = "✓ It's been approved!";
-  });
+    document.getElementById(buttonId).className = 'complete'
+    document.getElementById(buttonId).innerText = "✓ It's been approved!"
+  })
 
   document.getElementById(buttonId).addEventListener('click', async () => {
-    const signer = provider.getSigner();
-    await contract.connect(signer).approve();
-  });
+    const signer = provider.getSigner()
+    await contract.connect(signer).approve()
+  })
 }
 
-function createHTML(buttonId, arbiter, beneficiary, value) {
+function createHTML (buttonId, arbiter, beneficiary, value) {
   return `
     <div class="existing-contract">
       <ul className="fields">
@@ -46,5 +46,5 @@ function createHTML(buttonId, arbiter, beneficiary, value) {
         </div>
       </ul>
     </div>
-  `;
+  `
 }

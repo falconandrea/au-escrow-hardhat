@@ -1,13 +1,13 @@
-export default function Escrow({
+export default function Escrow ({
   address,
   arbiter,
   beneficiary,
   value,
-  handleApprove,
+  handleApprove
 }) {
   return (
-    <div className="existing-contract">
-      <ul className="fields">
+    <div className='existing-contract'>
+      <ul className='fields'>
         <li>
           <div> Arbiter </div>
           <div> {arbiter} </div>
@@ -21,17 +21,17 @@ export default function Escrow({
           <div> {value} </div>
         </li>
         <div
-          className="button"
+          className='button'
           id={address}
           onClick={(e) => {
-            e.preventDefault();
+            e.preventDefault()
 
-            handleApprove();
+            handleApprove()
           }}
         >
           Approve
         </div>
       </ul>
     </div>
-  );
+  )
 }
