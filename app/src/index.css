@@ -27,7 +27,8 @@ label {
   margin: 20px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
   padding: 6px;
   font-size: 18px;
 }
