@@ -42,9 +42,33 @@ contract EscrowList {
             }
         }
         Transaction[] memory temp = new Transaction[](length);
+        length = 0;
         for (uint256 i = 0; i < transactions.length; i++) {
             if (transactions[i].depositor == msg.sender) {
-                temp[temp.length - 1] = transactions[i];
+                temp[length] = transactions[i];
+                length++;
+            }
+        }
+        return temp;
+    }
+
+    function getListEscrowsToApprove()
+        public
+        view
+        returns (Transaction[] memory)
+    {
+        uint256 length = 0;
+        for (uint256 i = 0; i < transactions.length; i++) {
+            if (transactions[i].arbiter == msg.sender) {
+                length++;
+            }
+        }
+        Transaction[] memory temp = new Transaction[](length);
+        length = 0;
+        for (uint256 i = 0; i < transactions.length; i++) {
+            if (transactions[i].arbiter == msg.sender) {
+                temp[length] = transactions[i];
+                length++;
             }
         }
         return temp;
