@@ -81,6 +81,9 @@ function App () {
 
   return (
     <div>
+      <h1 className='text-center font-bold mt-4 text-2xl'>Escrow dApp</h1>
+      <p className='text-center'>More info about the project <a href='https://github.com/falconandrea/au-escrow-hardhat' title='' className='underline' target='_blank' rel='noreferrer'>here</a>.</p>
+
       <div className='block p-6 rounded-lg shadow-lg bg-white mx-auto my-4 max-w-md'>
         {!account
           ? (
@@ -94,7 +97,7 @@ function App () {
             )
           : (
             <div className='contract'>
-              <h1 className='text-xl font-bold mb-6'>Create New Contract</h1>
+              <h2 className='text-xl font-bold mb-6'>Create New Contract</h2>
 
               <div className='form-control mb-4'>
                 <label htmlFor='your_account' className='font-bold'>Your account</label>
@@ -182,6 +185,7 @@ function App () {
         </div>
       )}
 
+      <p className='text-center p-6'>2023 - <a className='underline' href='https://github.com/falconandrea/' title='' target='_blank' rel='noreferrer'>Andrea Falcon</a></p>
     </div>
   )
 }
