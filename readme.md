@@ -1,3 +1,7 @@
+<a href="https://trackgit.com">
+<img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/ljptv85ckadr3gmo1glj" alt="trackgit-views" />
+</a>
+
 # Decentralized Escrow Application
 
 This is an Escrow Dapp built with [Hardhat](https://hardhat.org/).
