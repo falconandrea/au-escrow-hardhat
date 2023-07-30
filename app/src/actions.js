@@ -1,5 +1,5 @@
 import { ethers } from 'ethers'
-import EscrowList from './../../abi/EscrowList.json'
+import EscrowList from './abi/EscrowList.json'
 
 const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || ''
 
